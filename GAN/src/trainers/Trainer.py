@@ -46,6 +46,9 @@ class GAN_trainer():
         
         print('Created Trainer',flush = True)
         
+
+        ### TO BE JITTED ### 
+
         
         def forward_pass(batch, parameters, key):
 
