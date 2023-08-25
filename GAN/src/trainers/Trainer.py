@@ -46,7 +46,7 @@ class GAN_trainer():
         
         print('Created Trainer',flush = True)
         
-        @jit
+        
         def forward_pass(batch, parameters, key):
 
             simulated_pmts, simulated_sipms = self.sim_wf(batch['energy_deposits'], parameters['S_parameters'], self.noise, key)
@@ -64,7 +64,7 @@ class GAN_trainer():
             
         self.noise = batch_gen_noise_constant(batch['S2Si'],subkey)
         
-        self.gradient_fn = jit(jax.value_and_grad(forward_pass, argnums=1,has_aux=False))
+        self.gradient_fn = jax.value_and_grad(forward_pass, argnums=1,has_aux=False)
         
         opt_init, opt_update, get_params = jax_opt.adamax(2e-3)
             
