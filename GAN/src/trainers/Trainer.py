@@ -132,7 +132,7 @@ class GAN_trainer():
 
         labels = []
         
-        ## [real, fake ] 1 hot ####
+        ## [real, fake ] almost 1 hot to help during training ####
 
         for c in range(0,2*l):
             if c < l:
