@@ -136,9 +136,9 @@ class GAN_trainer():
 
         for c in range(0,2*l):
             if c < l:
-                labels.append(jnp.array((1,0)))
+                labels.append(jnp.array((0.99,0.01)))
             else:
-                labels.append(jnp.array((0,1)))
+                labels.append(jnp.array((0.01,0.99)))
 
         train_batch_filtered['Labels'] = jnp.array(labels)
 
