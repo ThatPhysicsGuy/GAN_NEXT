@@ -1,0 +1,6 @@
+defaults:
+  - _self_
+  - base_config
+
+save_path: output/
+model_name: model
